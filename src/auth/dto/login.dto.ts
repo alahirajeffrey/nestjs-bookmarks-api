@@ -4,7 +4,7 @@ export class LoginDto{
 
     @IsEmail()
     @IsNotEmpty()
-    username: string
+    email: string
 
     @IsNotEmpty()
     password: string
