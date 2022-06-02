@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { identity } from "rxjs";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { BookmarkEntity } from "./bookmark.entity";
 
 @Entity('users')
 export class UserEntity{
@@ -17,4 +19,9 @@ export class UserEntity{
 
     @Column()
     username: string
+
+    @OneToMany(()=> BookmarkEntity, (book : BookmarkEntity)=>
+        book.id)
+    bookmarkId : BookmarkEntity
+
 }

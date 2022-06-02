@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { UserEntity } from "./user.entity";
 
 @Entity('bookmarks')
 export class BookmarkEntity{
@@ -19,4 +20,8 @@ export class BookmarkEntity{
 
     @Column()
     description?: string
+
+    @OneToOne(()=> UserEntity, (user : UserEntity)=>
+        user.id)
+    user : UserEntity
 }
