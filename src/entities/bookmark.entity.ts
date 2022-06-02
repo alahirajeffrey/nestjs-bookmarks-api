@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
-@Entity()
+@Entity('bookmarks')
 export class BookmarkEntity{
     @PrimaryGeneratedColumn('uuid')
     id:string
