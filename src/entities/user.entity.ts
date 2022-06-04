@@ -1,4 +1,3 @@
-import { identity } from "rxjs";
 import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn, Unique } from "typeorm";
 import { BookmarkEntity } from "./bookmark.entity";
 
